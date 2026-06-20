@@ -1,8 +1,8 @@
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
-    git unzip libzip-dev libpng-dev libonig-dev curl \
-    && docker-php-ext-install pdo pdo_mysql zip gd
+    git unzip libzip-dev libpng-dev libonig-dev curl libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql zip gd
 
 # Installer Node.js (pour Vite)
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
