@@ -7,6 +7,14 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 
+Route::get('/test-db', function () {
+    return [
+        'users' => \App\Models\User::count(),
+        'categories' => \App\Models\Category::count(),
+        'products' => \App\Models\Product::count(),
+    ];
+});
+
 
 Route::get('/', function () {
     return view('welcome');
